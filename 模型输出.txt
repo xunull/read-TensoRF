@@ -1,0 +1,58 @@
+TensorVMSplit(
+  (density_plane): ParameterList(
+      (0): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x128 (GPU 0)]
+      (1): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x128 (GPU 0)]
+      (2): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x128 (GPU 0)]
+  )
+  (density_line): ParameterList(
+      (0): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x1 (GPU 0)]
+      (1): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x1 (GPU 0)]
+      (2): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x1 (GPU 0)]
+  )
+  (app_plane): ParameterList(
+      (0): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x128 (GPU 0)]
+      (1): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x128 (GPU 0)]
+      (2): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x128 (GPU 0)]
+  )
+  (app_line): ParameterList(
+      (0): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x1 (GPU 0)]
+      (1): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x1 (GPU 0)]
+      (2): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x1 (GPU 0)]
+  )
+  (basis_mat): Linear(in_features=144, out_features=27, bias=False)
+  (renderModule): MLPRender_Fea(
+    (mlp): Sequential(
+      (0): Linear(in_features=150, out_features=128, bias=True)
+      (1): ReLU(inplace=True)
+      (2): Linear(in_features=128, out_features=128, bias=True)
+      (3): ReLU(inplace=True)
+      (4): Linear(in_features=128, out_features=3, bias=True)
+    )
+  )
+)
+
+---------------------------
+
+
+TensorCP(
+  (density_line): ParameterList(
+      (0): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x1 (GPU 0)]
+      (1): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x1 (GPU 0)]
+      (2): Parameter containing: [torch.cuda.FloatTensor of size 1x16x128x1 (GPU 0)]
+  )
+  (app_line): ParameterList(
+      (0): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x1 (GPU 0)]
+      (1): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x1 (GPU 0)]
+      (2): Parameter containing: [torch.cuda.FloatTensor of size 1x48x128x1 (GPU 0)]
+  )
+  (basis_mat): Linear(in_features=48, out_features=27, bias=False)
+  (renderModule): MLPRender_Fea(
+    (mlp): Sequential(
+      (0): Linear(in_features=150, out_features=128, bias=True)
+      (1): ReLU(inplace=True)
+      (2): Linear(in_features=128, out_features=128, bias=True)
+      (3): ReLU(inplace=True)
+      (4): Linear(in_features=128, out_features=3, bias=True)
+    )
+  )
+)
